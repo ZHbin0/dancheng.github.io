@@ -572,6 +572,247 @@
             font-weight: 600;
         }
 
+        /* Publication Tags */
+        .pub-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .pub-tag {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .pub-tag.brain-tumor {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .pub-tag.ai {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .pub-tag.stroke {
+            background: #fce7f3;
+            color: #9d174d;
+        }
+
+        .pub-tag.spinal {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .pub-tag.vascular {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        .pub-tag.genetics {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Featured Research */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .research-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .research-card.ai-tumor::before {
+            background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+
+        .research-card.vessel-wall::before {
+            background: linear-gradient(90deg, #ec4899 0%, #f43f5e 100%);
+        }
+
+        .research-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .research-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 1.8rem;
+        }
+
+        .research-card.ai-tumor .research-icon {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+
+        .research-card.vessel-wall .research-icon {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+        }
+
+        .research-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .research-card .research-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .research-highlights {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+
+        .research-highlights li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .research-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .research-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .research-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Insights Section */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .insight-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .insight-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .insight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        .insight-card h3 {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            opacity: 0.5;
+        }
+
+        .insight-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            opacity: 0.5;
+        }
+
+        /* Responsive for new sections */
+        @media (max-width: 1024px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .research-card {
+                padding: 20px;
+            }
+
+            .insight-card {
+                padding: 20px;
+            }
+        }
+
         /* Footer */
         .footer {
             margin-top: 50px;
@@ -728,8 +969,10 @@
                 <nav class="sidebar-nav">
                     <a href="#about">About</a>
                     <a href="#expertise">Expertise</a>
+                    <a href="#research">Research</a>
                     <a href="#career">Career</a>
                     <a href="#publications">Publications</a>
+                    <a href="#insights">Insights</a>
                     <a href="#honors">Honors</a>
                 </nav>
 
@@ -769,10 +1012,13 @@
             <section id="about" class="section">
                 <h2 class="section-title">About</h2>
                 <p class="about-text">
-                    I am a radiologist and postdoctoral scholar at the University of Alabama at Birmingham, specializing in neuroradiology and vascular imaging. My research focuses on advancing neuroimaging techniques for improved diagnosis and understanding of cerebrovascular diseases and brain tumors.
+                    Welcome! I'm a radiologist and postdoctoral scholar at UAB, where I combine my passion for neuroimaging with cutting-edge AI technology. My journey spans from Beijing to Seattle, and now Birmingham — each step deepening my commitment to improving how we diagnose and treat brain diseases.
                 </p>
                 <p class="about-text">
-                    With clinical training from both China and the United States, I bring a unique perspective to translational research in radiology. I am particularly interested in developing and applying novel imaging methods to improve patient outcomes in neurological conditions.
+                    My research focuses on developing deep learning tools for brain tumor classification and using vessel wall MRI to prevent strokes. This work has been published in leading journals including <em>Clinical Cancer Research</em>, <em>Neuro-Oncology</em>, and <em>Radiology: Artificial Intelligence</em>. I'm currently supported by the Ron and Christine Lee Raccoon Stroke Research Fellowship as I continue exploring new frontiers in cerebrovascular imaging.
+                </p>
+                <p class="about-text">
+                    Beyond research, I'm driven by a simple goal: translating complex imaging innovations into real benefits for patients. Whether through academic collaboration or science communication, I believe in making medical imaging more accessible and impactful.
                 </p>
                 <div class="tags">
                     <span class="tag">Brain Tumor Imaging</span>
@@ -802,6 +1048,50 @@
                     <div class="expertise-card">
                         <h3><span>🎓</span> Academic Exchange</h3>
                         <p>Lectures, workshops, visiting scholar opportunities</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Research Section -->
+            <section id="research" class="section">
+                <h2 class="section-title">Featured Research</h2>
+                <div class="research-grid">
+                    <div class="research-card ai-tumor">
+                        <div class="research-icon">🧬</div>
+                        <h3>Deep Learning for Brain Tumor Classification</h3>
+                        <p class="research-desc">
+                            Developing fully automated deep learning models to predict molecular subtypes of posterior fossa ependymomas, enabling non-invasive tumor characterization for improved treatment planning.
+                        </p>
+                        <ul class="research-highlights">
+                            <li>Published in Clinical Cancer Research (2024)</li>
+                            <li>Fully automated pipeline from MRI to prediction</li>
+                            <li>High clinical applicability potential</li>
+                        </ul>
+                        <a href="#publications" class="research-link">
+                            Related publications
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="research-card vessel-wall">
+                        <div class="research-icon">🫀</div>
+                        <h3>Vessel Wall MRI for Stroke Prevention</h3>
+                        <p class="research-desc">
+                            Utilizing high-resolution vessel wall MRI to characterize intracranial atherosclerotic plaques, identifying high-risk features for stroke prediction and prevention strategies.
+                        </p>
+                        <ul class="research-highlights">
+                            <li>Plaque characterization and risk stratification</li>
+                            <li>Multi-center research collaboration</li>
+                            <li>Integration with clinical stroke prevention</li>
+                        </ul>
+                        <a href="#publications" class="research-link">
+                            Related publications
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -841,30 +1131,87 @@
                     <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
                     <div class="pub-title">A Fully Automated Deep-Learning Model for Predicting the Molecular Subtypes of Posterior Fossa Ependymomas</div>
                     <div class="journal">Clinical Cancer Research <span class="year">2024</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag brain-tumor">Brain Tumor</span>
+                        <span class="pub-tag ai">AI</span>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
+                    <div class="pub-title">Prediction of H3K27M Alteration Status in Brainstem Glioma Using Multi-Shell Diffusion MRI Metrics</div>
+                    <div class="journal">Journal of Magnetic Resonance Imaging <span class="year">2024</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag brain-tumor">Brain Tumor</span>
+                        <span class="pub-tag ai">AI</span>
+                    </div>
                 </div>
 
                 <div class="publication">
                     <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
                     <div class="pub-title">Amide proton transfer-weighted imaging and derived radiomics in the classification of adult-type diffuse gliomas</div>
                     <div class="journal">European Radiology <span class="year">2024</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag brain-tumor">Brain Tumor</span>
+                        <span class="pub-tag ai">AI</span>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
+                    <div class="pub-title">'Soap bubble' sign as an imaging marker for posterior fossa ependymoma Group B</div>
+                    <div class="journal">Neuroradiology <span class="year">2023</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag brain-tumor">Brain Tumor</span>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
+                    <div class="pub-title">Amide proton transfer-weighted imaging of pediatric brainstem glioma</div>
+                    <div class="journal">Acta Radiologica <span class="year">2023</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag brain-tumor">Brain Tumor</span>
+                    </div>
                 </div>
 
                 <div class="publication">
                     <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
                     <div class="pub-title">Deep learning based on preoperative MR images improves survival prediction in spinal cord astrocytomas</div>
                     <div class="journal">Neuro-Oncology <span class="year">2023</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag spinal">Spinal</span>
+                        <span class="pub-tag ai">AI</span>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
+                    <div class="pub-title">Deep Brain Stimulation Modulates Multiple Abnormal Resting-State Network Connectivity in Patients With Cervical Dystonia</div>
+                    <div class="journal">Frontiers in Neurology <span class="year">2022</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag vascular">Neuroimaging</span>
+                    </div>
                 </div>
 
                 <div class="publication">
                     <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
                     <div class="pub-title">Automated Classification of Intramedullary Spinal Cord Tumors and Inflammatory Demyelinating Lesions</div>
                     <div class="journal">Radiology: Artificial Intelligence <span class="year">2022</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag spinal">Spinal</span>
+                        <span class="pub-tag ai">AI</span>
+                    </div>
                 </div>
 
                 <div class="publication">
                     <div class="authors"><span class="highlight">Cheng D</span>, et al.</div>
                     <div class="pub-title">Fetal Familial Cerebral Cavernous Malformation With a Novel Heterozygous KRIT1 Variation</div>
                     <div class="journal">Neurology <span class="year">2021</span></div>
+                    <div class="pub-tags">
+                        <span class="pub-tag genetics">Genetics</span>
+                        <span class="pub-tag vascular">Vascular</span>
+                    </div>
                 </div>
 
                 <div class="publications-more">
@@ -874,6 +1221,31 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                         </svg>
                     </a>
+                </div>
+            </section>
+
+            <!-- Insights Section -->
+            <section id="insights" class="section">
+                <h2 class="section-title">Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-overlay">Coming Soon</div>
+                        <div class="insight-icon">📷</div>
+                        <h3>Understanding Medical Imaging</h3>
+                        <p>CT, MRI, and more explained</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-overlay">Coming Soon</div>
+                        <div class="insight-icon">🧠</div>
+                        <h3>Brain Health</h3>
+                        <p>Stroke, tumors, and neurological conditions</p>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-overlay">Coming Soon</div>
+                        <div class="insight-icon">👤</div>
+                        <h3>For Patients</h3>
+                        <p>What to expect from your imaging exam</p>
+                    </div>
                 </div>
             </section>
 
